@@ -1,0 +1,2641 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "menu",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://{{url}}"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "auth"
+        },
+        {
+            "name": "category"
+        },
+        {
+            "name": "item"
+        }
+    ],
+    "paths": {
+        "/users/register": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "phoneNumber": "0770717s670",
+                                    "password": "my dick is small",
+                                    "username": "mr.limga",
+                                    "restaurant": {
+                                        "name": "s1mply burger"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "663"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"297-ti7Gjoq5r6bl/4GD8ixt+751rWo\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 12 Jan 2022 09:02:26 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "tokens": {
+                                        "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyZGYyY2E4LTI2YmMtNDk3YS04MDE4LWUyOGM1ZTMxMDBlZSIsInR5cGUiOiJBQ0NFU1MiLCJpYXQiOjE2NDE5NzgxNDYsImV4cCI6MTY0MTk4MTc0Nn0.Eq5NJRqsX7lBHtlkcplPanMrujEGOUe-1igV7OmTXwQ",
+                                        "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyZGYyY2E4LTI2YmMtNDk3YS04MDE4LWUyOGM1ZTMxMDBlZSIsInR5cGUiOiJSRUZSRVNIIiwiaWF0IjoxNjQxOTc4MTQ2LCJleHAiOjE2NDIwNjQ1NDZ9.MnOqtV98O6DRG7736PQuHecVRCCxL8j-KrTHvFA4EIM"
+                                    },
+                                    "user": {
+                                        "id": "f2df2ca8-26bc-497a-8018-e28c5e3100ee",
+                                        "username": "mr.limga",
+                                        "phoneNumber": "0770717s670",
+                                        "restaurantId": "8a0a1617-4174-4e10-8ba9-9227cf7291d8",
+                                        "active": true,
+                                        "restaurant": {
+                                            "name": "s1mply-burger"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "login",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "phoneNumber": "07707176675",
+                                    "password": "my dick is small"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Set-Cookie": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzNTFmZGM4LWUwMjYtNDg2OS04YmZiLTk5MmUyODk2NWZiMCIsInR5cGUiOiJBQ0NFU1MiLCJpYXQiOjE2NDE4MjQ5NjUsImV4cCI6MTY0MTgyODU2NX0.aip7i5CT8I-JalhH49KV3VP8Itjge9loECFpc1V1xrQ; Path=/; HttpOnly"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "625"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"271-axJFamxyDqa5HXy/GHER7dUlLBs\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Mon, 10 Jan 2022 14:29:25 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "tokens": {
+                                        "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzNTFmZGM4LWUwMjYtNDg2OS04YmZiLTk5MmUyODk2NWZiMCIsInR5cGUiOiJBQ0NFU1MiLCJpYXQiOjE2NDE4MjQ5NjUsImV4cCI6MTY0MTgyODU2NX0.aip7i5CT8I-JalhH49KV3VP8Itjge9loECFpc1V1xrQ",
+                                        "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzNTFmZGM4LWUwMjYtNDg2OS04YmZiLTk5MmUyODk2NWZiMCIsInR5cGUiOiJSRUZSRVNIIiwiaWF0IjoxNjQxODI0OTY1LCJleHAiOjE2NDE5MTEzNjV9.gJvyStELgAD4LbBMA3gNm6GihezdjCBnUnAGyo4Yh8o"
+                                    },
+                                    "user": {
+                                        "id": "e351fdc8-e026-4869-8bfb-992e28965fb0",
+                                        "username": "mr.limga",
+                                        "phoneNumber": "07707176675",
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/list": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "get all users",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"8101-0UL+54RlXA16qgkrp+apV1rJIsk\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Thu, 13 Jan 2022 10:32:09 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": [
+                                        {
+                                            "id": "e351fdc8-e026-4869-8bfb-992e28965fb0",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$968kwzGK0FiAPjNc2Tjusu.XniTRhYDCiRWQOxQBeIEeWWKcGNymC",
+                                            "phoneNumber": "07707176675",
+                                            "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                "name": "cum shop",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "b7fcd469-048b-4a1e-beca-d62148eb6f28",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$e.K/nain.moO7nG7MYYWA.CpqXX32VepgB1mILjTT1dnhmty.SwqG",
+                                            "phoneNumber": "07707176674",
+                                            "restaurantId": "55faeb3e-d8c5-4f9a-bafb-ab8278908291",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "55faeb3e-d8c5-4f9a-bafb-ab8278908291",
+                                                "name": "cum-shop",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "15959e70-3394-4658-a568-2525c9d76b75",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "07707176673",
+                                            "restaurantId": "a0011e30-8043-4a94-9fd4-f3197cb08f0d",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "a0011e30-8043-4a94-9fd4-f3197cb08f0d",
+                                                "name": "restaurant-name",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "9cd51017-3379-45ff-a9e8-16353a7d659f",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$Jy9Sf6bXfjfrT72QI2fcUuJoVbo2s4nZHHNi83YrlcJlRwLdg3TPm",
+                                            "phoneNumber": "07707176672",
+                                            "restaurantId": "c3573462-918c-4d34-9a60-aa56fecd4ff5",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "c3573462-918c-4d34-9a60-aa56fecd4ff5",
+                                                "name": "yumm",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "0d5294e4-b78a-4fc6-8ce1-18a27b4f8f51",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$mYHD2ir7gcuEp1iP2O0WWON0NJ54CiITcyaGhJfUfk7urrhyQWFRe",
+                                            "phoneNumber": "07707176670",
+                                            "restaurantId": "22524384-8d4e-4290-b377-c47c9daad97a",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "22524384-8d4e-4290-b377-c47c9daad97a",
+                                                "name": "new-restaueant",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "f2df2ca8-26bc-497a-8018-e28c5e3100ee",
+                                            "username": "mr.limga",
+                                            "password": "$2b$12$GASsObhMuI8HhwjQL2xwI.SY5ZwmGpUaMlqqgOrtwzEWUjZZBUlyG",
+                                            "phoneNumber": "0770717s670",
+                                            "restaurantId": "8a0a1617-4174-4e10-8ba9-9227cf7291d8",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "8a0a1617-4174-4e10-8ba9-9227cf7291d8",
+                                                "name": "s1mply-burger",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "9357cbd5-bf81-4013-8ec7-dcea19ad4579",
+                                            "username": "Ms.-Garrison-Wunsch",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "123456789",
+                                            "restaurantId": "e92e2f81-0af3-4930-9960-1931ce02cbde",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "e92e2f81-0af3-4930-9960-1931ce02cbde",
+                                                "name": "Jast",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "291682fb-57b6-4d87-a407-4d0de8228422",
+                                            "username": "Miss-Paige-Baumbach",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "625.774.1569",
+                                            "restaurantId": "aaa5fd6f-f3a2-4503-8f26-7c348e5eaedc",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "aaa5fd6f-f3a2-4503-8f26-7c348e5eaedc",
+                                                "name": "Monahan",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "cabc977e-b670-48ab-9dab-bb428bc03ae5",
+                                            "username": "Mrs.-Adah-OReilly",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "470.988.8411",
+                                            "restaurantId": "3eec6820-e170-49e6-989e-ebda54ab85c6",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "3eec6820-e170-49e6-989e-ebda54ab85c6",
+                                                "name": "Kerluke",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "763b8aa9-5ba8-43e6-b2a9-d9a0658578be",
+                                            "username": "Miss-Jadyn-Padberg",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(723) 942-1415 x46743",
+                                            "restaurantId": "4c6f6aa4-01ed-4181-a258-fcb3b4833071",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "4c6f6aa4-01ed-4181-a258-fcb3b4833071",
+                                                "name": "Macejkovic",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "a507b2c7-78ec-40a9-b3cb-c81fabd3bdf8",
+                                            "username": "Miss-Claud-Gusikowski",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(857) 351-6761 x91803",
+                                            "restaurantId": "ad058ee2-980b-48d3-a41e-48dd2bfeaa84",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "ad058ee2-980b-48d3-a41e-48dd2bfeaa84",
+                                                "name": "Thiel",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "70c94e2d-4c27-4c20-b572-bccdb39eb9ac",
+                                            "username": "Miss-Brenden-Kemmer",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-884-618-7335 x7083",
+                                            "restaurantId": "da8ab346-a729-4dcb-9cea-ab3d527d0f30",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "da8ab346-a729-4dcb-9cea-ab3d527d0f30",
+                                                "name": "Waelchi",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "dda9722b-be1d-454a-9221-bfff1d1fdbcb",
+                                            "username": "Dr.-Sally-Kulas",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "874.986.1327",
+                                            "restaurantId": "e5fa712e-1634-4ed5-bde0-db0197e7a7de",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "e5fa712e-1634-4ed5-bde0-db0197e7a7de",
+                                                "name": "Lang",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "d4e64377-3a54-4e65-95c7-aff1b0952179",
+                                            "username": "Dr.-Raheem-Streich",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "856.763.5613 x11986",
+                                            "restaurantId": "6d16ee36-53a7-4333-8091-e538f810fbf0",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "6d16ee36-53a7-4333-8091-e538f810fbf0",
+                                                "name": "Fahey",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "4a96292c-6b7d-412c-bc3d-4e8039e13d25",
+                                            "username": "Mrs.-Mervin-Kuhn",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(996) 475-2833 x0982",
+                                            "restaurantId": "5b675a05-7f0a-4b2b-952b-19ea0e198edc",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "5b675a05-7f0a-4b2b-952b-19ea0e198edc",
+                                                "name": "Schoen",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "ff004466-b080-45ee-a263-a7cee40edbc1",
+                                            "username": "Dr.-Wellington-Marvin",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "428.525.5983 x80003",
+                                            "restaurantId": "f3251854-229f-4643-903f-7a7153923b50",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "f3251854-229f-4643-903f-7a7153923b50",
+                                                "name": "Paucek",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "c82ae584-fcaa-4736-bf52-4932d7f68451",
+                                            "username": "Mrs.-Edward-Corkery",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(822) 579-2861 x34775",
+                                            "restaurantId": "fda2f78d-93df-4898-9472-fc0d2eb1ca29",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "fda2f78d-93df-4898-9472-fc0d2eb1ca29",
+                                                "name": "Russel",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "b2371709-1d26-45d3-8bfb-8eb56efef16b",
+                                            "username": "Miss-Hershel-Orn",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-!##-!##-####",
+                                            "restaurantId": "e38e5270-2876-4019-862e-8665f71c0d84",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "e38e5270-2876-4019-862e-8665f71c0d84",
+                                                "name": "Jones",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "47d4e42a-c16b-4f11-b125-fe76242bba0a",
+                                            "username": "Mrs.-Emil-Lueilwitz",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "!##.!##.#### x#####",
+                                            "restaurantId": "f8157c80-3cd7-4e66-a09e-93917c386ffd",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "f8157c80-3cd7-4e66-a09e-93917c386ffd",
+                                                "name": "Ankunding",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "1998ebc8-fd70-45bf-8bc2-43e1bd1aa3ee",
+                                            "username": "Mr.-Pattie-Mitchell",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "!##-!##-####",
+                                            "restaurantId": "79e5cd68-80be-40cc-a3a9-75f2d2b24978",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "79e5cd68-80be-40cc-a3a9-75f2d2b24978",
+                                                "name": "Spencer",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "6508adda-bd1a-4ad9-b472-421b677d431a",
+                                            "username": "Dr.-Mateo-Daniel",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-311-867-7445",
+                                            "restaurantId": "7355e7f7-3be2-4b4a-a830-1d039515564e",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "7355e7f7-3be2-4b4a-a830-1d039515564e",
+                                                "name": "O'Keefe",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "1bea6905-15b5-4ebf-84d3-46cc7d69ed12",
+                                            "username": "Mrs.-Vernie-Yundt",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "929.723.4560 x368",
+                                            "restaurantId": "6a38f742-50e6-4a8d-887f-f90b25716afb",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "6a38f742-50e6-4a8d-887f-f90b25716afb",
+                                                "name": "Bode",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "7157b584-a0da-4342-8e00-c397cd3847a6",
+                                            "username": "Dr.-Eva-Marquardt",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "793.469.9315",
+                                            "restaurantId": "fe7ae527-ba84-4288-b503-8c299486a4db",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "fe7ae527-ba84-4288-b503-8c299486a4db",
+                                                "name": "Mante",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "cde9c061-1592-4fcb-94e8-63f18e9c2515",
+                                            "username": "Mr.-Rhea-Hayes",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-322-820-3432 x3986",
+                                            "restaurantId": "01488ca7-1b4d-48b2-984e-d12aa9a23598",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "01488ca7-1b4d-48b2-984e-d12aa9a23598",
+                                                "name": "Hand",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "8c74fd92-fc84-4b4b-a161-647ad3d8b78d",
+                                            "username": "Miss-Macey-Bauch",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "224.412.0839",
+                                            "restaurantId": "94dc6ddf-6d7a-47db-8fd4-4ba7121e5922",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "94dc6ddf-6d7a-47db-8fd4-4ba7121e5922",
+                                                "name": "Lockman",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "b7ff9c7b-e814-4425-86cb-7697595e627c",
+                                            "username": "Ms.-Onie-Mayer",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-863-270-7699 x849",
+                                            "restaurantId": "139f4f98-bdda-4e8f-99f5-539bbaa22d12",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "139f4f98-bdda-4e8f-99f5-539bbaa22d12",
+                                                "name": "Olson",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "2becfaff-1b77-4174-875a-ecee84774f68",
+                                            "username": "Ms.-Rubie-Schultz",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "693.611.7431 x7407",
+                                            "restaurantId": "fa2781dd-1a48-4d7e-9623-6afc0baaa5dc",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "fa2781dd-1a48-4d7e-9623-6afc0baaa5dc",
+                                                "name": "Koch",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "83aa5a94-fd4a-48ff-b2cc-0b755754dec8",
+                                            "username": "Mr.-Stephania-Sauer",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "843-598-1382",
+                                            "restaurantId": "cf304658-0a0d-41cd-b45b-ec9badebe4f0",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "cf304658-0a0d-41cd-b45b-ec9badebe4f0",
+                                                "name": "Jacobs",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "cd7b4520-7e15-4eb0-95ad-7b4100c73bff",
+                                            "username": "Dr.-Dudley-Wolf",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "971-479-1462",
+                                            "restaurantId": "4d99f793-245c-48a8-814d-42bd8494ed04",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "4d99f793-245c-48a8-814d-42bd8494ed04",
+                                                "name": "Kemmer",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "8d00cf58-e9c2-45b8-b466-0b81932efc4d",
+                                            "username": "Mrs.-Kieran-Nicolas",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(382) 914-6354 x046",
+                                            "restaurantId": "9a926f47-1233-415a-ab1c-1654a9433d62",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "9a926f47-1233-415a-ab1c-1654a9433d62",
+                                                "name": "Jacobi",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "d40654a1-f9b3-400e-96cc-385b0f6feda4",
+                                            "username": "Dr.-Dewayne-Anderson",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "486-580-5044",
+                                            "restaurantId": "bf2d7ec2-97f7-418c-9322-80593ed10581",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "bf2d7ec2-97f7-418c-9322-80593ed10581",
+                                                "name": "Windler",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "d29ebe86-4752-48b1-ba4d-975463d42b98",
+                                            "username": "Mr.-Alessia-Reynolds",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-277-887-2690",
+                                            "restaurantId": "95cdbd45-38ba-41d1-94bc-123b5e7680e3",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "95cdbd45-38ba-41d1-94bc-123b5e7680e3",
+                                                "name": "Hirthe",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "f4972d11-b5ac-4bdb-a98d-d2176f0c2598",
+                                            "username": "Mrs.-Jimmie-Lockman",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "814-541-3273 x149",
+                                            "restaurantId": "12de9aa1-64f1-4b4c-86fa-8752da6376d8",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "12de9aa1-64f1-4b4c-86fa-8752da6376d8",
+                                                "name": "Turner",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "ed3420b7-3235-4472-a49b-0e000ea92575",
+                                            "username": "Miss-Thad-Nikolaus",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-280-613-7364 x86307",
+                                            "restaurantId": "7202d498-0342-41dc-b43a-6cb77adf6a0f",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "7202d498-0342-41dc-b43a-6cb77adf6a0f",
+                                                "name": "Leuschke",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "8865c8e3-a968-4e0b-9231-5aac9b24a971",
+                                            "username": "Dr.-Merle-Walter",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "866.910.1560",
+                                            "restaurantId": "c067f4bb-15ba-4d93-9f50-c0eddb56fe3a",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "c067f4bb-15ba-4d93-9f50-c0eddb56fe3a",
+                                                "name": "DuBuque",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "df9ad7a5-589c-47b8-a31a-955465bd7a65",
+                                            "username": "Dr.-Diego-McClure",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(998) 906-0667 x27738",
+                                            "restaurantId": "fb2f42ee-b3bd-4430-95c6-177ec3f6f0c8",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "fb2f42ee-b3bd-4430-95c6-177ec3f6f0c8",
+                                                "name": "Schamberger",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "a1fcde99-96a1-41d8-9930-f12d7dcaf1ba",
+                                            "username": "Ms.-Mekhi-Bosco",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-421-755-9817 x4964",
+                                            "restaurantId": "5961f6af-6ec0-40d6-afb4-f6fcd81f0eef",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "5961f6af-6ec0-40d6-afb4-f6fcd81f0eef",
+                                                "name": "Fritsch",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "37944b12-cd5f-49ef-a314-1b9bb811afc2",
+                                            "username": "Mrs.-Emilie-Bartell",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "611-799-1477",
+                                            "restaurantId": "bc15d209-7865-4df3-9370-1735eef19698",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "bc15d209-7865-4df3-9370-1735eef19698",
+                                                "name": "Pollich",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "73b1e81d-7ab6-478b-ad6c-0277c471018e",
+                                            "username": "Miss-Chandler-Legros",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-706-270-8034 x77285",
+                                            "restaurantId": "45371a5f-0072-4023-9138-a20b567456d9",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "45371a5f-0072-4023-9138-a20b567456d9",
+                                                "name": "Feeney",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "416add49-568e-4e8a-aece-27a9362ec660",
+                                            "username": "Ms.-Eveline-Becker",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-886-526-8240 x543",
+                                            "restaurantId": "9caf6010-a081-427f-a600-f06449ab83c6",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "9caf6010-a081-427f-a600-f06449ab83c6",
+                                                "name": "Bernhard",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "598949e7-8a22-46b6-8e5b-85ff94e29a8e",
+                                            "username": "Mrs.-Kaylah-Schinner",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "847.918.6989",
+                                            "restaurantId": "b0a607a5-cac1-4876-8ab1-e305c34ced88",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "b0a607a5-cac1-4876-8ab1-e305c34ced88",
+                                                "name": "Labadie",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "7b965df3-eecc-47b6-b926-e9d44202a0b1",
+                                            "username": "Mr.-Erick-Swift",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-667-404-3804 x51784",
+                                            "restaurantId": "9b724808-1aad-4063-987f-0020d744e43c",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "9b724808-1aad-4063-987f-0020d744e43c",
+                                                "name": "b",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "8c2dee44-1204-41ff-9642-68bf9cb5a054",
+                                            "username": "Mrs.-Shirley-Hamill",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "447-842-2388 x728",
+                                            "restaurantId": "6e8a7066-50a7-422e-ab8a-b072c2e45ae4",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "6e8a7066-50a7-422e-ab8a-b072c2e45ae4",
+                                                "name": "c",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "a9c901ed-16f1-4069-a9d9-7a1981ccc358",
+                                            "username": "Miss-Gaston-Dicki",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(526) 970-8515",
+                                            "restaurantId": "516ff13b-9322-43ae-bf85-2307b8c12ad0",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "516ff13b-9322-43ae-bf85-2307b8c12ad0",
+                                                "name": "a",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "b669bab9-75cd-41ad-b93c-5bd97f6c95ab",
+                                            "username": "Mr.-Janet-Von",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-777-459-4751",
+                                            "restaurantId": "d2a878bd-a7b2-40dc-8fe4-2418c34b5686",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "d2a878bd-a7b2-40dc-8fe4-2418c34b5686",
+                                                "name": "0",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "9500aaf3-c036-45e0-a755-7a8c031c11f0",
+                                            "username": "Mrs.-Garrick-Kerluke",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "979-535-9653",
+                                            "restaurantId": "cca8f1f9-ef6f-4c69-bac5-c262adbd81b1",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "cca8f1f9-ef6f-4c69-bac5-c262adbd81b1",
+                                                "name": "1",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "ce2a55c5-2fa1-4a13-b885-b3efc1d5c784",
+                                            "username": "Miss-Davonte-Fritsch",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "651-793-6551 x640",
+                                            "restaurantId": "861013ec-3122-4be4-8756-13a5ebfc5118",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "861013ec-3122-4be4-8756-13a5ebfc5118",
+                                                "name": "2",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "fb1f2e67-7b3d-4f99-9eba-b110330942cf",
+                                            "username": "Mr.-Guiseppe-Jakubowski",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "587.258.2420 x6644",
+                                            "restaurantId": "23609965-5cb1-4701-b9d8-f3b8dfc0a48e",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "23609965-5cb1-4701-b9d8-f3b8dfc0a48e",
+                                                "name": "3",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "3b887493-c2ed-4456-bcd3-892fe46c9d1c",
+                                            "username": "Mrs.-Madeline-Greenfelder",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(359) 686-9585 x9853",
+                                            "restaurantId": "53d54c3c-7e8b-43f1-be71-c22c024bd550",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "53d54c3c-7e8b-43f1-be71-c22c024bd550",
+                                                "name": "4",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "15c40501-38df-465d-a645-fd51009847ff",
+                                            "username": "Miss-Pattie-McClure",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "774.471.3610 x20833",
+                                            "restaurantId": "90350f21-22d4-47de-9f67-94c53c1d106d",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "90350f21-22d4-47de-9f67-94c53c1d106d",
+                                                "name": "5",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "1240243c-f667-4052-a032-fcf7888af4cb",
+                                            "username": "Miss-Ardith-Zulauf",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "699.355.8714",
+                                            "restaurantId": "c7b90742-395b-4c6b-8952-360b7e92b722",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "c7b90742-395b-4c6b-8952-360b7e92b722",
+                                                "name": "6",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "31c64738-2ec5-4370-8572-423bf9839d7c",
+                                            "username": "Dr.-Armand-Braun",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "805.729.5396 x748",
+                                            "restaurantId": "9e896227-4d05-4f63-9a8d-83b1cb9821ed",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "9e896227-4d05-4f63-9a8d-83b1cb9821ed",
+                                                "name": "7",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "a28ba56d-3303-473d-a83c-f02abf8b6635",
+                                            "username": "Miss-Dudley-Connelly",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(559) 478-1351",
+                                            "restaurantId": "f91d08ea-c7cd-45f7-bef5-306922c180ad",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "f91d08ea-c7cd-45f7-bef5-306922c180ad",
+                                                "name": "8",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "020d403c-edc9-4ff0-a8b4-8ac46bf7a7d5",
+                                            "username": "Mr.-Lolita-White",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(479) 634-7098",
+                                            "restaurantId": "ba5a86bd-b5de-4eb8-bab4-a65cfaba0709",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "ba5a86bd-b5de-4eb8-bab4-a65cfaba0709",
+                                                "name": "9",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "7757d0e5-dd6b-4d84-9da8-1767ad03adbf",
+                                            "username": "Ms.-Eve-Mann",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "942.480.5993 x325",
+                                            "restaurantId": "e8fbdf53-79e4-4993-8b19-24ae8814e394",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "e8fbdf53-79e4-4993-8b19-24ae8814e394",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-0",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "75e2c023-1b23-4b81-be07-12961ab119c5",
+                                            "username": "Mr.-Zoe-Williamson",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-415-965-5100 x61062",
+                                            "restaurantId": "8cd6c1ed-952f-472a-8f01-ac9d291f868e",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "8cd6c1ed-952f-472a-8f01-ac9d291f868e",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-1",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "22f6e9bb-db23-4fbd-be47-4eed28d11252",
+                                            "username": "Ms.-Alisa-Bernhard",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "501-381-7239",
+                                            "restaurantId": "b169281e-3880-4407-a514-5046b8e9b21f",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "b169281e-3880-4407-a514-5046b8e9b21f",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-2",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "85f024b2-a4db-46b3-ab61-27dccb427c3c",
+                                            "username": "Mr.-Vella-Harris",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "454.372.8082",
+                                            "restaurantId": "ab24b2ac-babf-4485-bcee-ddce552c68c7",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "ab24b2ac-babf-4485-bcee-ddce552c68c7",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-3",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "581ecf5d-5a41-4ed1-849f-a7a09e520c76",
+                                            "username": "Miss-Terrill-Legros",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "566.558.9126",
+                                            "restaurantId": "3c706726-178e-461f-9de7-3c29f1e1bcb7",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "3c706726-178e-461f-9de7-3c29f1e1bcb7",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-4",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "227d7677-32c0-4c1e-be7b-90d10043f807",
+                                            "username": "Mr.-Emma-Mann",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-834-499-3581 x991",
+                                            "restaurantId": "42442489-c381-4824-877e-82c2cb004cf2",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "42442489-c381-4824-877e-82c2cb004cf2",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-5",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "a6a77137-b8e1-4efa-a5ba-4730d236b4da",
+                                            "username": "Ms.-Candido-Corwin",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(950) 706-3668 x18891",
+                                            "restaurantId": "a2e843c9-2ac7-49a8-840e-31e5cec456e5",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "a2e843c9-2ac7-49a8-840e-31e5cec456e5",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-6",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "c13cce4d-718f-4825-bbf2-d5dd7749918a",
+                                            "username": "Miss-Edd-Bartell",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "202-531-3767 x230",
+                                            "restaurantId": "937fbaeb-c3ee-49af-b671-3c7d4e2b8c26",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "937fbaeb-c3ee-49af-b671-3c7d4e2b8c26",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-7",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "95876fff-7d78-4546-9a5a-95813a867d99",
+                                            "username": "Mr.-Hayley-Klocko",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(722) 396-8081",
+                                            "restaurantId": "9e3f2c71-0609-4c09-b40b-7b5f4d5d06e9",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "9e3f2c71-0609-4c09-b40b-7b5f4d5d06e9",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-8",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "bd0120d3-93a6-440c-a5fa-603ce33f23d7",
+                                            "username": "Ms.-Alvis-Champlin",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-610-381-6754 x4650",
+                                            "restaurantId": "3126ce7d-2b95-48dd-bc0a-f6ad236c82ad",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "3126ce7d-2b95-48dd-bc0a-f6ad236c82ad",
+                                                "name": "function (gender) {\n    if (typeof faker.definitions.name.male_last_name !== \"undefined\" && typeof faker.definitions.name.female_last_name !== \"undefined\") {\n      // some locale datasets ( like ru ) have last_name split by gender. i have no idea how last names can have genders, but also i do not speak russian\n      // see above comment of firstName method\n      if (typeof gender !== 'number') {\n        gender = faker.datatype.number(1);\n      }\n      if (gender === 0) {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.male_last_name);\n      } else {\n        return faker.random.arrayElement(faker.locales[faker.locale].name.female_last_name);\n      }\n    }\n    return faker.random.arrayElement(faker.definitions.name.last_name);\n  }-9",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "ba7ce006-c3ee-4125-a101-b5afb42efdc8",
+                                            "username": "Mr.-Reese-White",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(626) 906-4818 x7416",
+                                            "restaurantId": "49effb8a-18b7-4067-92e4-a4595336bbb7",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "49effb8a-18b7-4067-92e4-a4595336bbb7",
+                                                "name": "Doyle-0",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "0fcb0855-3423-4e72-9164-58a8ddf888d4",
+                                            "username": "Mrs.-Jenifer-Muller",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-760-789-5941",
+                                            "restaurantId": "df0ba659-becf-4483-931f-4d41f7badde3",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "df0ba659-becf-4483-931f-4d41f7badde3",
+                                                "name": "Schinner-1",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "b2683f06-167f-4735-820c-0023c1f08a51",
+                                            "username": "Mrs.-Lauren-Bashirian",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "759-856-1185 x511",
+                                            "restaurantId": "a280357e-08ea-41cc-85c1-595f9025f0d8",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "a280357e-08ea-41cc-85c1-595f9025f0d8",
+                                                "name": "Ratke-2",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "9a0127e9-ae76-4f6e-a028-ee4c96187e6f",
+                                            "username": "Mr.-Brisa-Schroeder",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "465-200-2045 x7010",
+                                            "restaurantId": "239bad7d-5a52-4fea-b349-c4d7f4e39ff7",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "239bad7d-5a52-4fea-b349-c4d7f4e39ff7",
+                                                "name": "Konopelski-3",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "12078d11-683c-4f1c-906b-6e63a7078e3b",
+                                            "username": "Ms.-Juliana-Zieme",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "284.505.5042",
+                                            "restaurantId": "05e17f8e-3d3b-4286-83d0-04b54ef65d38",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "05e17f8e-3d3b-4286-83d0-04b54ef65d38",
+                                                "name": "Witting-4",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "8a37ef93-03a3-4d3d-a253-74cce4c38dac",
+                                            "username": "Mrs.-Joel-Boyle",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "769-857-5748 x87187",
+                                            "restaurantId": "05d14a81-071d-4d06-9304-a175022d3dd7",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "05d14a81-071d-4d06-9304-a175022d3dd7",
+                                                "name": "Abbott-5",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "2bcb22a1-036e-4c58-9b99-0ccc80b1afb7",
+                                            "username": "Mr.-Dasia-Johnson",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "957-962-6245 x91251",
+                                            "restaurantId": "f1797998-f84f-4bcd-8e0d-c2593d45508a",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "f1797998-f84f-4bcd-8e0d-c2593d45508a",
+                                                "name": "Bode-6",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "eb25196c-6945-4ccb-b828-b249cc0d0bc3",
+                                            "username": "Dr.-Jayson-Price",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "1-887-438-7955 x1509",
+                                            "restaurantId": "6ffc1b76-0320-44e7-93f8-794ae0f42b28",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "6ffc1b76-0320-44e7-93f8-794ae0f42b28",
+                                                "name": "Collins-7",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "51432ab1-0c47-4815-a77a-1dfa33d61e9d",
+                                            "username": "Mrs.-Gia-Boehm",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "(796) 895-5345 x3267",
+                                            "restaurantId": "ee11c95d-56bf-43a7-9fdc-dc647c5a6f77",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "ee11c95d-56bf-43a7-9fdc-dc647c5a6f77",
+                                                "name": "Lang-8",
+                                                "active": true
+                                            }
+                                        },
+                                        {
+                                            "id": "62cbe786-a3c0-4edc-8dbb-b4d8d45b2eed",
+                                            "username": "Miss-Cathrine-Dickinson",
+                                            "password": "$2b$12$Qy6PuT1V00bCDAgAx.6SK.xIOD49eBNvAQK6VYCEbJu/Q1FBVAUdi",
+                                            "phoneNumber": "644.315.0976",
+                                            "restaurantId": "17372bc2-0fbb-4ac1-854d-31e53917086b",
+                                            "active": true,
+                                            "restaurant": {
+                                                "id": "17372bc2-0fbb-4ac1-854d-31e53917086b",
+                                                "name": "Wilkinson-9",
+                                                "active": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Weissnat/category": {
+            "post": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "create",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "burger",
+                                    "icon": "burger-icon"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "174"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"ae-JVjUHQ7ugqW4bqYCxZSDJedXEcA\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 17:48:40 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "19ce6b31-4fe8-4547-9b4f-96aaa0390532",
+                                        "name": "burger",
+                                        "icon": "burger-icon",
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Weissnat/category/19ce6b31-4fe8-4547-9b4f-96aaa0390532": {
+            "put": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "update",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "sandwich",
+                                    "icon": "burger-icon"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "176"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"b0-Vge8h8iwQvsUBcLktAEmTBRKSYM\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 17:50:12 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "19ce6b31-4fe8-4547-9b4f-96aaa0390532",
+                                        "name": "sandwich",
+                                        "icon": "burger-icon",
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{restaurantId}/category/19ce6b31-4fe8-4547-9b4f-96aaa0390532": {
+            "delete": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "name": "restaurantId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/Schinner-1/category": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "list",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurantId/category/19ce6b31-4fe8-4547-9b4f-96aaa0390532": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "get",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "177"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"b1-hfLBepdk+E+VXbmpXt7zXw639zY\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 17:52:48 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "19ce6b31-4fe8-4547-9b4f-96aaa0390532",
+                                        "name": "sandwich",
+                                        "icon": "burger-icon",
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{restaurantId}/item": {
+            "post": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "create",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "categoryId": {
+                                        "type": "string",
+                                        "example": "44ada395-e347-4ea2-9479-fc8453c86dfb"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "theName"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "please let me die i hate this"
+                                    },
+                                    "price": {
+                                        "type": "integer",
+                                        "example": "69"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "restaurantId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "349"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"15d-Woqv9/W9VUtHXP9Kqu0oSsEegaU\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 18:54:09 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "87e70915-0276-447e-a224-caa5260fd3c6",
+                                        "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                        "image": "https://dudes-ardunic.s3.amazonaws.com/7d32fc61-7210-43db-a6b2-bf0e92707b00",
+                                        "name": "theName",
+                                        "description": "please let me die i hate this",
+                                        "price": 69,
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{restaurantId}/item/87e70915-0276-447e-a224-caa5260fd3c6": {
+            "put": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "update",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "new name"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "restaurantId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "350"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"15e-xP/Cb0OGYZogMMNfN9WC3yzwJfk\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 18:55:46 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "87e70915-0276-447e-a224-caa5260fd3c6",
+                                        "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                        "image": "https://dudes-ardunic.s3.amazonaws.com/7d32fc61-7210-43db-a6b2-bf0e92707b00",
+                                        "name": "new name",
+                                        "description": "please let me die i hate this",
+                                        "price": 69,
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "get",
+                "parameters": [
+                    {
+                        "name": "restaurantId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "350"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"15e-xP/Cb0OGYZogMMNfN9WC3yzwJfk\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 18:57:10 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "data": {
+                                        "id": "87e70915-0276-447e-a224-caa5260fd3c6",
+                                        "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                        "image": "https://dudes-ardunic.s3.amazonaws.com/7d32fc61-7210-43db-a6b2-bf0e92707b00",
+                                        "name": "new name",
+                                        "description": "please let me die i hate this",
+                                        "price": 69,
+                                        "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                        "active": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Schinner-1/item": {
+            "get": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "name": "listByCategory",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "example": "true"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Content-Security-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                }
+                            },
+                            "X-DNS-Prefetch-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "off"
+                                }
+                            },
+                            "Expect-CT": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=0"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=15552000; includeSubDomains"
+                                }
+                            },
+                            "X-Download-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "noopen"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "X-Permitted-Cross-Domain-Policies": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "none"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "0"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "691"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"2b3-3yyrCd9L3A43+VDjPvaCnBgTbK8\""
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 11 Jan 2022 18:56:34 GMT"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Keep-Alive": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "timeout=5"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "example-0": {
+                                        "summary": "listByCategory = false",
+                                        "value": {
+                                            "success": true,
+                                            "data": [
+                                                {
+                                                    "id": "81cd4aba-9895-4282-9fef-0c60d26e08c1",
+                                                    "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                                    "image": "https://dudes-ardunic.s3.eu-central-1.amazonaws.com/4e71a31f-3cda-424c-8d26-01cadade94f1",
+                                                    "name": "theName",
+                                                    "description": "please let me die i hate this",
+                                                    "price": 69,
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": true
+                                                },
+                                                {
+                                                    "id": "87e70915-0276-447e-a224-caa5260fd3c6",
+                                                    "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                                    "image": "https://dudes-ardunic.s3.amazonaws.com/7d32fc61-7210-43db-a6b2-bf0e92707b00",
+                                                    "name": "new name",
+                                                    "description": "please let me die i hate this",
+                                                    "price": 69,
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": true
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "example-1": {
+                                        "summary": "listByCategory = true",
+                                        "value": {
+                                            "success": true,
+                                            "data": [
+                                                {
+                                                    "id": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                                    "name": "bruger",
+                                                    "icon": "bbb",
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": true,
+                                                    "Items": [
+                                                        {
+                                                            "id": "81cd4aba-9895-4282-9fef-0c60d26e08c1",
+                                                            "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                                            "image": "https://dudes-ardunic.s3.eu-central-1.amazonaws.com/4e71a31f-3cda-424c-8d26-01cadade94f1",
+                                                            "name": "theName",
+                                                            "description": "please let me die i hate this",
+                                                            "price": 69,
+                                                            "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                            "active": true
+                                                        },
+                                                        {
+                                                            "id": "87e70915-0276-447e-a224-caa5260fd3c6",
+                                                            "categoryId": "44ada395-e347-4ea2-9479-fc8453c86dfb",
+                                                            "image": "https://dudes-ardunic.s3.amazonaws.com/7d32fc61-7210-43db-a6b2-bf0e92707b00",
+                                                            "name": "new name",
+                                                            "description": "please let me die i hate this",
+                                                            "price": 69,
+                                                            "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                            "active": false
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "19ce6b31-4fe8-4547-9b4f-96aaa0390532",
+                                                    "name": "sandwich",
+                                                    "icon": "burger-icon",
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": false,
+                                                    "Items": []
+                                                },
+                                                {
+                                                    "id": "af65ab9a-c788-4bf9-a19f-df7ad67b4465",
+                                                    "name": "burger",
+                                                    "icon": "burger-icon",
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": true,
+                                                    "Items": []
+                                                },
+                                                {
+                                                    "id": "fcd2c551-e3c3-40fe-acb5-80b3b9728ecb",
+                                                    "name": "pizzaa",
+                                                    "icon": "pizza-icon",
+                                                    "restaurantId": "84e5f8aa-6aba-46bf-9eda-ad3bcad6c731",
+                                                    "active": true,
+                                                    "Items": []
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurantId/item/87e70915-0276-447e-a224-caa5260fd3c6": {
+            "delete": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "delete",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

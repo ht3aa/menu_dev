@@ -1,0 +1,119 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Restaurant {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  active      Boolean  @default(true)
+  image       String   @default("")
+  description Json     @default("{\"en\": \"descriptoin_en\",\"ar\":\"description_Ar\"}")
+  address     Json     @default("{\"en\": \"address_en\",\"ar\":\"address_ar\"}")
+  addressLink String   @default("")
+  colors      String[]
+  groupName   String   @default("")
+
+  Users     User[]
+  Category  Category[]
+  Item      Item[]
+  Banner    Banner[]
+  OuterType OuterType[]
+  Type      Type[]
+}
+
+model User {
+  id           String     @id @default(uuid())
+  username     String
+  password     String
+  phoneNumber  String     @unique
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String
+  active       Boolean    @default(true)
+  role         Role       @default(ADMIN)
+}
+
+model Category {
+  id           String     @id @default(uuid())
+  name         Json
+  icon         String
+  Items        Item[]
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  place        Int        @default(autoincrement())
+  restaurantId String
+  active       Boolean    @default(true)
+}
+
+model Item {
+  id           String     @id @default(uuid())
+  category     Category   @relation(fields: [categoryId], references: [id])
+  categoryId   String
+  image        String
+  name         Json
+  description  Json
+  price        Float
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String
+  active       Boolean    @default(true)
+
+  outerType Json[]
+
+  // outerType   OuterType? @relation(fields: [outerTypeId], references: [id])
+  // outerTypeId String?
+  // // OuterType   OuterType? @relation(fields: [outerTypeId], references: [id])
+  // OuterType   OuterType? @relation(fields: [outerTypeId], references: [id])
+  // outerTypeId String?
+}
+
+model Banner {
+  id String @id @default(uuid())
+
+  image  String
+  link   String
+  active Boolean @default(true)
+
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String
+}
+
+model OuterType {
+  id String @id @default(uuid())
+
+  name    String
+  name_ar String
+
+  active Boolean @default(true)
+
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String
+
+  // types Type[]
+  // Item  Item[]
+  Type Type[]
+}
+
+model Type {
+  id String @id @default(uuid())
+
+  value    String
+  value_ar String
+
+  price Float
+
+  active Boolean @default(true)
+
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String
+
+  outerType   OuterType @relation(fields: [outerTypeId], references: [id], onDelete: SetNull)
+  outerTypeId String
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+}
